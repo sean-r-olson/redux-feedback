@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 
 class Supported extends Component {
 
@@ -6,19 +8,23 @@ maxResponseNumber = 5;
 minResponseNumber = 1;
     
 state = {
-    response: 1
+    feelingsResponse: 1, 
+    understandingResponse: 1, 
+    supportedResponse: 1, 
+    commentsResponse: 1,  
 }
 
 handleSubmit = () => {
     console.log('clicked handleSubmit');
+    this.props.dispatch({type: 'ADD_SUPPORTED', payload: this.state.supportedResponse})
     this.props.history.push('/Comments');
 }
 
 handleChange = (event) => {
     if (event.target.value < this.maxResponseNumber && event.target.value > this.minResponseNumber ) {
     this.setState({
-        ...this.state.response,
-        response: event.target.value
+        ...this.state.supportedResponse,
+        supportedResponse: event.target.value
     }) 
     } else if (event.target.value > this.maxResponseNumber || event.target.value < this.minResponseNumber ) {
         alert('Your response must be between 1 and 5!')
@@ -40,4 +46,4 @@ handleChange = (event) => {
   }
 }
 
-export default Supported;
+export default connect() (Supported);

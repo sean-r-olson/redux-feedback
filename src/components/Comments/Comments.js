@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 
 class Comments extends Component {
 
@@ -6,19 +8,23 @@ maxResponseNumber = 5;
 minResponseNumber = 1;
     
 state = {
-    response: 1
+    feelingsResponse: 1, 
+    understandingResponse: 1, 
+    supportedResponse: 1, 
+    commentsResponse: 1,  
 }
 
 handleSubmit = () => {
     console.log('clicked handleSubmit');
+    this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.commentsResponse})
     this.props.history.push('/Review');
     }
 
 handleChange = (event) => {
     if (event.target.value < this.maxResponseNumber && event.target.value > this.minResponseNumber ) {
     this.setState({
-        ...this.state.response,
-        response: event.target.value
+        ...this.state.commentsResponse,
+        commentsResponse: event.target.value
     }) 
     } else if (event.target.value > this.maxResponseNumber || event.target.value < this.minResponseNumber ) {
         alert('Your response must be between 1 and 5!')
@@ -40,4 +46,4 @@ handleChange = (event) => {
   }
 }
 
-export default Comments;
+export default connect() (Comments);

@@ -8,6 +8,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -27,4 +28,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect() (App);

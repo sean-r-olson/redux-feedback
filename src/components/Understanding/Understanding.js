@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 
 class Understanding extends Component {
 
@@ -6,19 +8,23 @@ maxResponseNumber = 5;
 minResponseNumber = 1;
 
 state = {
-    response: 1
+    feelingsResponse: 1, 
+    understandingResponse: 1, 
+    supportedResponse: 1, 
+    commentsResponse: 1,  
 }
 
 handleSubmit = () => {
     console.log('clicked handleSubmit');
+    this.props.dispatch({type: 'ADD_UNDERSTANDING', payload: this.state.understandingResponse})
     this.props.history.push('/Supported');
     }
 
 handleChange = (event) => {
     if (event.target.value < this.maxResponseNumber && event.target.value > this.minResponseNumber ) {
     this.setState({
-        ...this.state.response,
-        response: event.target.value
+        ...this.state.understandingResponse,
+        understandingResponse: event.target.value
     }) 
     } else if (event.target.value > this.maxResponseNumber || event.target.value < this.minResponseNumber ) {
         alert('Your response must be between 1 and 5!')
@@ -40,4 +46,4 @@ handleChange = (event) => {
   }
 }
 
-export default Understanding;
+export default connect() (Understanding);
