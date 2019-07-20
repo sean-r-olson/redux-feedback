@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
 class Comments extends Component {
@@ -41,9 +42,14 @@ handleChange = (event) => {
             <input type = "text" onChange={this.handleChange}/>
         </form>
         <button onClick={this.handleSubmit}>Next</button>
+        <ReviewResponses/>
       </div>
     )
   }
 }
 
-export default connect() (Comments);
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
+})
+
+export default connect(mapStateToProps) (Comments);

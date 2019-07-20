@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
 class Feelings extends Component {
@@ -42,13 +43,7 @@ handleChange = (event) => {
                 <input type = "number" onChange={this.handleChange}/>
             </form>
         <button onClick={this.handleSubmit}>Next</button>
-        <ul> Feelings: 
-        {this.props.reduxStore.responseReducer.map((response, i) => {
-                       return (
-                           <li key={i}>{response.feelingsResponse}</li>
-                       );
-                   })}
-                   </ul> 
+        <ReviewResponses/>
       </div>
     )
   }

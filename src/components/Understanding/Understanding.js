@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
 class Understanding extends Component {
@@ -41,9 +42,14 @@ handleChange = (event) => {
             <input type = "number" onChange={this.handleChange}/>
         </form>
         <button onClick={this.handleSubmit}>Next</button>
+       <ReviewResponses/>
       </div>
     )
   }
 }
 
-export default connect() (Understanding);
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
+})
+
+export default connect(mapStateToProps) (Understanding);
