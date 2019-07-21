@@ -5,7 +5,6 @@ import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
 class Comments extends Component {
-
     
 state = {
     feelingsResponse: 1, 

@@ -5,9 +5,6 @@ import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
 class Supported extends Component {
-
-maxResponseNumber = 5;
-minResponseNumber = 1;
     
 state = {
     feelingsResponse: 1, 
@@ -23,15 +20,11 @@ handleSubmit = () => {
 }
 
 handleChange = (event) => {
-    if (event.target.value < this.maxResponseNumber && event.target.value > this.minResponseNumber ) {
     this.setState({
         ...this.state.supportedResponse,
         supportedResponse: event.target.value
     }) 
-    } else if (event.target.value > this.maxResponseNumber || event.target.value < this.minResponseNumber ) {
-        alert('Your response must be between 1 and 5!')
-    }
-    }
+}
 
   render() {
     return (
@@ -41,7 +34,7 @@ handleChange = (event) => {
             How supported do you feel?
             </h2>
         <form>
-            <input type = "number" onChange={this.handleChange}/>
+            <input type="number" min="1" max="5"  onChange={this.handleChange}/>
         </form>
         <button onClick={this.handleSubmit}>Next</button>
         </div>

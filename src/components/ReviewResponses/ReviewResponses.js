@@ -9,7 +9,7 @@ class ReviewResponses extends Component {
 
     return (
     <section>
-        <h1>Review Your Responses</h1>
+        <h1>Responses</h1>
         <hr/>
         <table className="table">
         <tbody>
