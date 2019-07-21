@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import '../App/App.css';
 import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
@@ -12,7 +13,7 @@ state = {
         feelingsResponse: 1, 
         understandingResponse: 1, 
         supportedResponse: 1, 
-        commentsResponse: 1,  
+        commentsResponse: '',  
 }
 
 handleSubmit = () => {
@@ -33,16 +34,18 @@ handleChange = (event) => {
 }
 
   render() {
-      console.log(this.state)
     return (
       <div>
-          <div>
+          <div className="inputDiv">
+          <h2>
               How are you feeling today?
-          </div>
+          </h2>
            <form>
                 <input type = "number" onChange={this.handleChange}/>
             </form>
         <button onClick={this.handleSubmit}>Next</button>
+        </div>
+        <br/>
         <ReviewResponses/>
       </div>
     )

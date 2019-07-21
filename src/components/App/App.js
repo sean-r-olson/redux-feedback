@@ -14,16 +14,19 @@ import { connect } from 'react-redux';
 class App extends Component {
   render() {
     return (
-      <Router>
-    <main className="App">
+    <div className="App">
+    <header className="App-header"><h1>Feedback</h1></header>
+    <br/>
+    <Router>
       <Route exact path = '/' component = {Feelings} />
       <Route path = '/Understanding' component = {Understanding} />
       <Route path = '/Supported' component = {Supported} />
       <Route path = '/Comments' component = {Comments} />
       <Route path = '/Review' component = {Review} />
       <Route path = '/ThankYou' component = {ThankYou} />
-    </main>
     </Router>
+    <footer className="App-footer"></footer>
+    </div>
     );
   }
 }

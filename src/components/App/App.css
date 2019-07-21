@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(202, 202, 202);
+}
+
 .App {
   text-align: center;
 }
@@ -9,6 +13,10 @@
   color: white;
 }
 
+.App-footer {
+  background-color: gray;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -16,4 +24,75 @@
 .App-intro {
   font-size: large;
 }
+
+button {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+border-radius: 4px;
+margin: 10px;
+font-size: 20px;
+border: 1.5px solid #033076; 
+}
+
+button:hover {
+  margin: 10px;
+  font-size: 20px;
+  background-color: #033076;
+  color: white;
+  }
+
+form {
+  margin: 5px;
+  text-align: center;
+}
+
+hr {
+  border: 3px solid #033076;
+  border-radius: 5px;
+}
+
+.inputDiv {
+  margin: auto;
+  width: 35%;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+section {
+  margin: auto;
+  width: 35%;
+  border: 5px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+}
+
+table {
+  table-layout: fixed;
+  min-width: 100px;
+  max-width: 100px;
+  margin: 30px;
+}
+
+textarea {
+  width: 150px;
+  height: 40px;
+}
+
+table th {
+  text-align: left;
+}
+
+table td {
+  text-align: left;
+  min-width: 10px;
+  max-width: 220px;
+  word-wrap: break-word; 
+}
+
+/* tr:nth-child(even) {
+  background-color: #f2f2f2;
+} */
+
 

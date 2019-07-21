@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import '../App/App.css';
 import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
@@ -12,14 +13,14 @@ state = {
     feelingsResponse: 1, 
     understandingResponse: 1, 
     supportedResponse: 1, 
-    commentsResponse: 1,  
+    commentsResponse: '',  
 }
 
 handleSubmit = () => {
     console.log('clicked handleSubmit');
     this.props.dispatch({type: 'ADD_UNDERSTANDING', payload: this.state.understandingResponse})
     this.props.history.push('/Supported');
-    }
+}
 
 handleChange = (event) => {
     if (event.target.value < this.maxResponseNumber && event.target.value > this.minResponseNumber ) {
@@ -35,13 +36,16 @@ handleChange = (event) => {
   render() {
     return (
       <div>
-        <div>
+        <div className="inputDiv">
+            <h2>
             How well are you understanding the material?
-        </div>
+            </h2>
         <form>
             <input type = "number" onChange={this.handleChange}/>
         </form>
         <button onClick={this.handleSubmit}>Next</button>
+        </div>
+        <br/>
        <ReviewResponses/>
       </div>
     )

@@ -9,11 +9,13 @@ import logger from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-const responses = [];
+let responses = [];
 
 const feelingsResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_FEELINGS') {
         return [...state, action.payload]
+    } else if (action.type === 'NEW_FEEDBACK') {
+        return []
     }
     return state;
 }
@@ -21,6 +23,8 @@ const feelingsResponseReducer = (state = responses, action) => {
 const understandingResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_UNDERSTANDING') {
     return [...state, action.payload]
+    } else if (action.type === 'NEW_FEEDBACK') {
+    return []
     }
     return state;
 }
@@ -28,6 +32,8 @@ const understandingResponseReducer = (state = responses, action) => {
 const supportedResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_SUPPORTED') {
     return [...state, action.payload]
+    } else if (action.type === 'NEW_FEEDBACK') {
+    return []
     }
     return state;
 }
@@ -35,6 +41,8 @@ const supportedResponseReducer = (state = responses, action) => {
 const commentsResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_COMMENTS') {
     return [...state, action.payload]
+    } else if (action.type === 'NEW_FEEDBACK') {
+    return []
     }
     return state;
 }
@@ -45,7 +53,7 @@ const reduxStore = createStore (
         feelingsResponseReducer,
         understandingResponseReducer,
         supportedResponseReducer,
-        commentsResponseReducer
+        commentsResponseReducer,
     }),
     applyMiddleware(logger)  
 )

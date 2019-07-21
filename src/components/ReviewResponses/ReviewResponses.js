@@ -1,52 +1,53 @@
 import React, {Component} from 'react';
+import '../App/App.css';
 import {connect} from 'react-redux';
 
 
 class ReviewResponses extends Component {
 
-state = {
-        feelingsResponse: 1, 
-        understandingResponse: 1, 
-        supportedResponse: 1, 
-        commentsResponse: 1,  
-}
-
-
-
   render() {
-      console.log(this.state)
 
     return (
-        <>
-        <ul> Feelings: 
+    <section>
+        <h1>Review Your Responses</h1>
+        <hr/>
+        <table className="table">
+        <tbody>
+        <tr>
+        <th>Feelings:</th>
         {this.props.reduxStore.feelingsResponseReducer.map((response, i) => {
                        return (
-                           <li key={i}>{response}</li>
+                           <td key={i}>{response}</td>
                        );
                    })}
-        </ul> 
-        <ul> Understanding: 
+        </tr> 
+        <tr> 
+        <th>Understanding:</th>
         {this.props.reduxStore.understandingResponseReducer.map((response, i) => {
                        return (
-                           <li key={i}>{response}</li>
+                           <td key={i}>{response}</td>
                        );
                    })}
-        </ul>
-        <ul> Supported: 
+        </tr>
+        <tr>
+        <th>Support:</th>
         {this.props.reduxStore.supportedResponseReducer.map((response, i) => {
                        return (
-                           <li key={i}>{response}</li>
+                           <td key={i}>{response}</td>
                        );
                    })}
-        </ul> 
-        <ul> Comments: 
+        </tr> 
+        <tr>
+        <th>Comments:</th> 
         {this.props.reduxStore.commentsResponseReducer.map((response, i) => {
                        return (
-                           <li key={i}>{response}</li>
+                           <td key={i}>{response}</td>
                        );
                    })}
-        </ul> 
-        </>
+        </tr> 
+        </tbody>
+        </table>
+    </section>
     )
 }
 }
