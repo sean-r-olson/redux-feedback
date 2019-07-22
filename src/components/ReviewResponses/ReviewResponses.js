@@ -31,7 +31,6 @@ class ReviewResponses extends Component {
         </tr> 
         </tbody>
         </table>
-        <button className="disabledBtn" type="button" disabled>Incomplete Feedback</button>
     </section>
     )
 }

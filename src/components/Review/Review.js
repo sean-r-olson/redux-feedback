@@ -6,13 +6,6 @@ import Axios from 'axios';
 
 class Review extends Component {
 
-state = {
-    feelingsResponse: 1, 
-    understandingResponse: 1, 
-    supportedResponse: 1, 
-    commentsResponse: '',  
-    }
-
 handleSubmit = () => {
     console.log('clicked handleSubmit');
     this.setState({
@@ -21,7 +14,7 @@ handleSubmit = () => {
         supportedResponse: this.props.reduxStore.supportedResponseReducer,
         commentsResponse: this.props.reduxStore.commentsResponseReducer, 
     })
-    Axios.post('/allResponses', this.state)
+    Axios.post('/allResponses', this.props.reduxStore)
     .then(response => {
         console.log(response);
         this.props.history.push('/ThankYou');
@@ -31,7 +24,7 @@ handleSubmit = () => {
 }
 
   render() {
-    console.log(this.state);
+    console.log(this.props.reduxStore);
     return (
       <div>
         <div className="inputDiv">

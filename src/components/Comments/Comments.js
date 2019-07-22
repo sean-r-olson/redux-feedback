@@ -27,21 +27,38 @@ handleChange = (event) => {
 }
 
   render() {
+    if (this.state.commentsResponse === '') {
     return (
       <div>
         <div className="inputDiv">
         <h2>
-            Anything you'd like us to know?
+            Tell us how you're feeling about things
         </h2>
         <textarea onChange={this.handleChange}>
         </textarea>
         <br/>
-        <button onClick={this.handleSubmit}>Next</button>
+        <button className="disabledBtn">Add Comment to Submit</button>
         </div>
         <br/>
         <ReviewResponses/>
       </div>
-    )
+    )} else if (this.state.comments !== '') {
+      return (
+        <div>
+        <div className="inputDiv">
+        <h2>
+            Tell us how you're feeling about things
+        </h2>
+        <textarea onChange={this.handleChange}>
+        </textarea>
+        <br/>
+        <button onClick={this.handleSubmit}>Submit</button>
+        </div>
+        <br/>
+        <ReviewResponses/>
+      </div>
+      )
+    }
   }
 }
 

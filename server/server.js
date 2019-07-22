@@ -14,7 +14,7 @@ app.post('/allResponses', (req,res) => {
     console.log('in /allResponses', req.body);
     const query = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
     VALUES($1, $2, $3, $4);`;
-    const values = [req.body.feelingsResponse, req.body.understandingResponse, req.body.supportedResponse, req.body.commentsResponse];
+    const values = [req.body.feelingsResponseReducer, req.body.understandingResponseReducer, req.body.supportedResponseReducer, req.body.commentsResponseReducer];
     pool.query(query, values).then((results) => {
         console.log('success with INSERT into db', req.body);
         res.sendStatus(201);
