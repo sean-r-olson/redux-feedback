@@ -15,36 +15,21 @@ class ReviewResponses extends Component {
         <tbody>
         <tr>
         <th>Feelings:</th>
-        {this.props.reduxStore.feelingsResponseReducer.map((response, i) => {
-                       return (
-                           <td key={i}>{response}</td>
-                       );
-                   })}
+        <td>{this.props.reduxStore.feelingsResponseReducer}</td>
         </tr> 
         <tr> 
         <th>Understanding:</th>
-        {this.props.reduxStore.understandingResponseReducer.map((response, i) => {
-                       return (
-                           <td key={i}>{response}</td>
-                       );
-                   })}
+        <td>{this.props.reduxStore.understandingResponseReducer}</td>
         </tr>
         <tr>
         <th>Support:</th>
-        {this.props.reduxStore.supportedResponseReducer.map((response, i) => {
-                       return (
-                           <td key={i}>{response}</td>
-                       );
-                   })}
+        <td>{this.props.reduxStore.supportedResponseReducer}</td>
         </tr> 
         <tr>
         <th>Comments:</th> 
-        {this.props.reduxStore.commentsResponseReducer.map((response, i) => {
-                       return (
-                           <td key={i}>{response}</td>
-                       );
-                   })}
+        <td>{this.props.reduxStore.commentsResponseReducer}</td>
         </tr> 
+        {/* <button className="deactivatedBtn"></button> */}
         </tbody>
         </table>
     </section>
