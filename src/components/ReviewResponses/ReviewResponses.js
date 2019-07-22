@@ -29,9 +29,9 @@ class ReviewResponses extends Component {
         <th>Comments:</th> 
         <td>{this.props.reduxStore.commentsResponseReducer}</td>
         </tr> 
-        {/* <button className="deactivatedBtn"></button> */}
         </tbody>
         </table>
+        <button className="disabledBtn" type="button" disabled>Incomplete Feedback</button>
     </section>
     )
 }

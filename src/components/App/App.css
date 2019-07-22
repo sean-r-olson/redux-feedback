@@ -90,6 +90,17 @@ table td {
   word-wrap: break-word; 
 }
 
+.disabledBtn {
+  background-color:rgb(202, 202, 202);
+  color: gray;
+
+}
+
+.disabledBtn:hover {
+  background-color:rgb(202, 202, 202);
+  color: gray;
+}
+
 /* tr:nth-child(even) {
   background-color: #f2f2f2;
 } */
