@@ -6,14 +6,11 @@ import Axios from 'axios';
 
 class Review extends Component {
 
+// on submit, send axios req to server
+//      -- send objects from reduxStore 
+// send user to /ThankYou to finish feedback
 handleSubmit = () => {
     console.log('clicked handleSubmit');
-    this.setState({
-        feelingsResponse: this.props.reduxStore.feelingsResponseReducer,
-        understandingResponse: this.props.reduxStore.understandingResponseReducer,
-        supportedResponse: this.props.reduxStore.supportedResponseReducer,
-        commentsResponse: this.props.reduxStore.commentsResponseReducer, 
-    })
     Axios.post('/allResponses', this.props.reduxStore)
     .then(response => {
         console.log(response);

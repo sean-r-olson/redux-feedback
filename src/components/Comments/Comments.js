@@ -5,28 +5,32 @@ import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 
 class Comments extends Component {
-    
-state = {
-    feelingsResponse: 1, 
-    understandingResponse: 1, 
-    supportedResponse: 1, 
-    commentsResponse: '',  
-}
+  
+  // declare state (to be modified upon submit click)
+  state = {
+      feelingsResponse: 1, 
+      understandingResponse: 1, 
+      supportedResponse: 1, 
+      commentsResponse: '',  
+  }
 
-handleSubmit = () => {
-    console.log('clicked handleSubmit');
-    this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.commentsResponse})
-    this.props.history.push('/Review');
-    }
+  // send dispatch to index containg comments response data on submit
+  handleSubmit = () => {
+      console.log('clicked handleSubmit');
+      this.props.dispatch({type: 'ADD_COMMENTS', payload: this.state.commentsResponse})
+      this.props.history.push('/Review');
+      }
 
-handleChange = (event) => {
-    this.setState({
-        ...this.state.commentsResponse,
-        commentsResponse: event.target.value
-    })
-}
+  // modify state upon change to comments response 
+  handleChange = (event) => {
+      this.setState({
+          ...this.state.commentsResponse,
+          commentsResponse: event.target.value
+      })
+  }
 
   render() {
+  // if comments are empty, return disabled button
     if (this.state.commentsResponse === '') {
     return (
       <div>
@@ -42,6 +46,7 @@ handleChange = (event) => {
         <br/>
         <ReviewResponses/>
       </div>
+  // if comments are filled in, return activated button to submit feedback
     )} else if (this.state.comments !== '') {
       return (
         <div>

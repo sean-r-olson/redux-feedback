@@ -6,6 +6,7 @@ import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 class Understanding extends Component {
 
+// declare state (to be modified upon submit click)
 state = {
     feelingsResponse: 1, 
     understandingResponse: 1, 
@@ -13,12 +14,14 @@ state = {
     commentsResponse: '',  
 }
 
+// send dispatch to index containg understanding response data on submit
 handleSubmit = () => {
     console.log('clicked handleSubmit');
     this.props.dispatch({type: 'ADD_UNDERSTANDING', payload: this.state.understandingResponse})
     this.props.history.push('/Supported');
 }
 
+// modify state upon change to understanding response 
 handleChange = (event) => {
     this.setState({
         ...this.state.understandingResponse,

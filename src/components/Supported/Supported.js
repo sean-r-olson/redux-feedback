@@ -6,6 +6,7 @@ import ReviewResponses from '../ReviewResponses/ReviewResponses';
 
 class Supported extends Component {
     
+// declare state (to be modified upon submit click)
 state = {
     feelingsResponse: 1, 
     understandingResponse: 1, 
@@ -13,12 +14,14 @@ state = {
     commentsResponse: '',  
 }
 
+// send dispatch to index containg supported response data on submit
 handleSubmit = () => {
     console.log('clicked handleSubmit');
     this.props.dispatch({type: 'ADD_SUPPORTED', payload: this.state.supportedResponse})
     this.props.history.push('/Comments');
 }
 
+// modify state upon change to supported response 
 handleChange = (event) => {
     this.setState({
         ...this.state.supportedResponse,

@@ -3,8 +3,11 @@ import {connect} from 'react-redux';
 
 class ThankYou extends Component {
 
+// set state to null for new feedback
 state = null;
-    
+
+// dispatch null to index to reset responses array
+// send user to feelings (home) screen
 handleSubmit = () => {
     console.log('clicked handleSubmit');
     this.props.dispatch({type: 'NEW_FEEDBACK', payload: this.state})

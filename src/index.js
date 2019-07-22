@@ -9,8 +9,11 @@ import logger from 'redux-logger'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
+// Array for payload objects to be pushed into
 let responses = [];
 
+// Feelings reducer returns feelings response into responses array 
+// if action.type is for new feedback, return an empty array to start fresh for new feedback
 const feelingsResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_FEELINGS') {
         return action.payload
@@ -20,6 +23,8 @@ const feelingsResponseReducer = (state = responses, action) => {
     return state;
 }
 
+// Feelings reducer returns feelings response into responses array 
+// if action.type is for new feedback, return an empty array to start fresh for new feedback\
 const understandingResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_UNDERSTANDING') {
     return action.payload
@@ -29,6 +34,8 @@ const understandingResponseReducer = (state = responses, action) => {
     return state;
 }
 
+// Supported reducer returns Supported response into responses array 
+// if action.type is for new feedback, return an empty array to start fresh for new feedback
 const supportedResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_SUPPORTED') {
     return action.payload
@@ -38,6 +45,8 @@ const supportedResponseReducer = (state = responses, action) => {
     return state;
 }
 
+// Comments reducer returns Comments response into responses array 
+// if action.type is for new feedback, return an empty array to start fresh for new feedback
 const commentsResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_COMMENTS') {
     return action.payload
@@ -47,7 +56,7 @@ const commentsResponseReducer = (state = responses, action) => {
     return state;
 }
 
-
+// Declare redux store using combineReducers (to be accesses in each component)
 const reduxStore = createStore (
     combineReducers({
         feelingsResponseReducer,
