@@ -13,7 +13,7 @@ let responses = [];
 
 const feelingsResponseReducer = (state = responses, action) => {
     if (action.type === 'ADD_FEELINGS') {
-        return [...state, action.payload]
+        return action.payload;
     } else if (action.type === 'NEW_FEEDBACK') {
         return []
     }

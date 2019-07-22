@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 class ReviewResponses extends Component {
 
   render() {
-
+    console.log(this.props.reduxStore)
     return (
     <section>
         <h1>Responses</h1>
