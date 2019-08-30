@@ -1,7 +1,7 @@
 # To Do List 
 The feedback app - giving students a chance to express how things are going for them. Students receiving this multi-paged feedback form will be able to rank their levels of different aspects of the program from 1-5, and leave any comments. This information is stored in a database for instructors to reference. 
 
-#Built With
+## Built With
 - JavaScript
 - React.js
 - Redux 
@@ -9,11 +9,11 @@ The feedback app - giving students a chance to express how things are going for 
 - SQL 
 - JSX/CSS
 
-#Prerequisites
+## Prerequisites
 - 1) Node.js 
 - 2) postgresql 
 
-#Getting environmnent up and running 
+## Getting environmnent up and running 
 - 1) Clone/Download Repository 
 - 2) Open project in preferred code editor
 - 3) Open terminal, npm install 
@@ -21,10 +21,10 @@ The feedback app - giving students a chance to express how things are going for 
 - 5) - in first, npm start
 - 6) - in second, npm run client
 
-#Screen Shot
+## Screen Shot
 ![screenshot](public/images/screenshot.png)
 
-#Completed Features
+## Completed Features
 - multipaged/routed app with three 4 aspects of feedback 
 - 1) Feeliing
 - 2) Understanding 
