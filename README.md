@@ -13,7 +13,13 @@ The feedback app - giving students a chance to express how things are going for 
 - 1) Node.js 
 - 2) postgresql 
 
-## Getting environmnent up and running 
+## Getting the environmnent up and running 
+
+Interact with the app here: 
+https://guarded-crag-60418.herokuapp.com/#/
+
+OR 
+
 - 1) Clone/Download Repository 
 - 2) Open project in preferred code editor
 - 3) Open terminal, npm install 
