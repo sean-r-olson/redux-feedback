@@ -1,4 +1,4 @@
-#To Do List 
+# To Do List 
 The feedback app - giving students a chance to express how things are going for them. Students receiving this multi-paged feedback form will be able to rank their levels of different aspects of the program from 1-5, and leave any comments. This information is stored in a database for instructors to reference. 
 
 #Built With
@@ -22,7 +22,7 @@ The feedback app - giving students a chance to express how things are going for 
 - 6) - in second, npm run client
 
 #Screen Shot
-![screenshot](server/public/images/screenshot2.png)
+![screenshot](public/images/screenshot.png)
 
 #Completed Features
 - multipaged/routed app with three 4 aspects of feedback 
