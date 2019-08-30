@@ -1,4 +1,4 @@
-# To Do List 
+# Feedback App
 The feedback app - giving students a chance to express how things are going for them. Students receiving this multi-paged feedback form will be able to rank their levels of different aspects of the program from 1-5, and leave any comments. This information is stored in a database for instructors to reference. 
 
 ## Built With
