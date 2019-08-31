@@ -2,7 +2,17 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import '../App/App.css';
 import ReviewResponses from '../ReviewResponses/ReviewResponses';
+import { withStyles } from '@material-ui/core/styles';
+import Radio from '@material-ui/core/Radio';
 
+const styles = {
+  root: {
+
+  },
+    checked: {
+    },
+
+};
 
 class Supported extends Component {
     
@@ -36,9 +46,54 @@ handleChange = (event) => {
             <h2>
             How supported do you feel?
             </h2>
-        <form>
-            <input type="number" min="1" max="5"  onChange={this.handleChange}/>
-        </form>
+            <form className="radio">
+             1
+           <Radio
+          checked={this.state.supportedResponse === '1'}
+          onChange={this.handleChange}
+          value='1'
+          color= "primary"
+          name="radio-button-demo"
+          aria-label='1'
+        />
+            2
+        <Radio
+          checked={this.state.supportedResponse === '2'}
+          onChange={this.handleChange}
+          value='2'
+          name="radio-button-demo"
+          aria-label='2'
+          color="primary"
+        />
+            3
+        <Radio
+          checked={this.state.supportedResponse === '3'}
+          onChange={this.handleChange}
+          value='3'
+          name="radio-button-demo"
+          aria-label='3'
+          color="primary"
+        />
+            4
+        <Radio
+          checked={this.state.supportedResponse === '4'}
+          onChange={this.handleChange}
+          value="4"
+          name="radio-button-demo"
+          aria-label='4'
+          color="primary"
+        />
+            5
+        <Radio
+          checked={this.state.supportedResponse === '5'}
+          onChange={this.handleChange}
+          value="5"
+          name="radio-button-demo"
+          aria-label='5'
+          color="primary"
+        />
+                {/* <input type="number" min="1" max="5" onChange={this.handleChange}/> */}
+            </form>
         <button onClick={this.handleSubmit}>Next</button>
         </div>
         <br/>
@@ -53,4 +108,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps) (Supported);
+export default withStyles(styles)(connect(mapStateToProps) (Supported));

@@ -69,6 +69,12 @@ hr {
   background-color: white;
 }
 
+.radio {
+  /* display: inline-block; */
+  color: #033076;
+  font-weight: 900;
+}
+
 section {
   margin: auto;
   width: 35%;

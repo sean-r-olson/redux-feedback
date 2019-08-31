@@ -2,7 +2,26 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import '../App/App.css';
 import ReviewResponses from '../ReviewResponses/ReviewResponses';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class Comments extends Component {
   
@@ -24,12 +43,12 @@ class Comments extends Component {
   // modify state upon change to comments response 
   handleChange = (event) => {
       this.setState({
-          ...this.state.commentsResponse,
           commentsResponse: event.target.value
       })
   }
 
   render() {
+    const { classes } = this.props;
   // if comments are empty, return disabled button
     if (this.state.commentsResponse === '') {
     return (
@@ -38,8 +57,17 @@ class Comments extends Component {
         <h2>
             Tell us how you're feeling about things
         </h2>
-        <textarea onChange={this.handleChange}>
-        </textarea>
+        <TextField
+          id="standard-multiline-flexible"
+          label="Comments"
+          multiline
+          rowsMax="4"
+          value={this.state.commentsResponse}
+          onChange={this.handleChange}
+          className={classes.textField}
+          margin="normal"
+        />
+
         <br/>
         <button className="disabledBtn">Add Comment to Submit</button>
         </div>
@@ -54,8 +82,17 @@ class Comments extends Component {
         <h2>
             Tell us how you're feeling about things
         </h2>
-        <textarea onChange={this.handleChange}>
-        </textarea>
+        <TextField
+          id="standard-multiline-flexible"
+          label="Comments"
+          multiline
+          rowsMax="4"
+          value={this.state.commentsResponse}
+          onChange={this.handleChange}
+          className={classes.textField}
+          margin="normal"
+        />
+
         <br/>
         <button onClick={this.handleSubmit}>Submit</button>
         </div>
@@ -71,4 +108,4 @@ const mapStateToProps = (reduxStore) => ({
     reduxStore
 })
 
-export default connect(mapStateToProps) (Comments);
+export default withStyles(styles)(connect(mapStateToProps) (Comments));
