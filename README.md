@@ -28,7 +28,7 @@ OR
 - 6) - in second, npm run client
 
 ## Screen Shot
-![screenshot](public/images/screenshot.png)
+![screenshot](public/images/screenshot2.png)
 
 ## Completed Features
 - multipaged/routed app with three 4 aspects of feedback 
