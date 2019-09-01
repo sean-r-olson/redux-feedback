@@ -17,7 +17,7 @@ handleSubmit = () => {
   render() {
     return (
       <div className="inputDiv">
-          <h1>ThanksFor Your Feedback!</h1> 
+          <h1>Thanks For Your Feedback!</h1> 
           <button onClick={this.handleSubmit}>Leave New Feedback</button>
       </div>
     )
